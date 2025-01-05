@@ -1,0 +1,60 @@
+﻿/ Andrea Marquez Tavera
+/ z = a * b * c
+/ Display every input value read in
+
+/ Assumed all will be a positive, nonnegative input per doc instructions
+
+/ Prompt user to type in integers
+Clear
+Store Z
+Input
+Store A
+Output
+Input
+Store B
+Output
+Input
+Store C
+Output
+
+/ Loop for performing iterative addition
+/ Adds A to sumOne a total of B times (aka A*B)
+loopOne,    Load A
+         Add sumOne
+         Store sumOne
+
+         Load B
+         Subt one
+         Store B
+	
+         Skipcond 400 / have we completed the multiplication?
+         Jump loopOne / no; repeat loop
+         / yes, so exit the loop
+
+/ Second loop for performing second half of formula
+/ Adds sumOne to Z a total of C times (aka A * B * C)
+loopTwo, 	Load sumOne
+		 Add Z
+         Store Z
+        
+         Load C
+         Subt one
+         Store C
+         
+         Skipcond 400 / have we completed the multiplication?
+         Jump loopTwo / no; repeat loop
+         / yes, so exit the loop
+         
+/ Output result to user then halt program
+Load Z
+Output	
+Halt
+        
+A, DEC 0
+B, DEC 0
+C, DEC 0
+sumOne, DEC 0
+Z, DEC 0 
+one, DEC 1
+
+
